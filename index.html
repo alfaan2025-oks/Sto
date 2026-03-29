@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force Service | Ремонт авто и ГБО в Новокузнецке</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        orange: {
+                            500: '#ff6b00',
+                            600: '#e66000',
+                        },
+                        gray: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            700: '#374151',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom slide transition */
+        .slide {
+            transition: opacity 0.5s ease-in-out;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-100 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-wrench text-orange-500 text-2xl"></i>
+                    <span class="font-black text-2xl tracking-tighter text-white">FORCE<span class="text-orange-500">SERVICE</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-300 hover:text-orange-500 transition font-medium">О нас</a>
+                    <a href="#services" class="text-gray-300 hover:text-orange-500 transition font-medium">Услуги и цены</a>
+                    <a href="#promotions" class="text-gray-300 hover:text-orange-500 transition font-medium">Акции</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-orange-500 transition font-medium">Отзывы</a>
+                    <div class="flex flex-col items-end ml-4">
+                        <a href="tel:+11234567890" class="text-white font-bold text-lg hover:text-orange-500 transition">+1 123 456 78 90</a>
+                        <span class="text-xs text-gray-400">Пн-Вс 10:00 - 21:00</span>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-b border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">О нас</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Услуги и цены</a>
+                <a href="#promotions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Акции</a>
+                <a href="#reviews" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Отзывы</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-orange-500 hover:text-orange-400">Онлайн запись</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Экран 1: Главный (Hero Section with Slider) -->
+    <header id="hero" class="relative w-full h-screen min-h-[600px] flex items-center justify-center pt-20 overflow-hidden bg-gray-900">
+        <!-- Slides Container -->
+        <div id="slider-container" class="absolute inset-0 w-full h-full">
+            <!-- Slides injected by JS -->
+        </div>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
+            <div id="slide-content" class="max-w-3xl">
+                <h1 id="slide-title" class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight slide opacity-100">
+                    Ремонт авто и ГБО в Новокузнецке
+                </h1>
+                <p id="slide-desc" class="text-xl md:text-2xl text-gray-300 mb-10 slide opacity-100 border-l-4 border-orange-500 pl-4">
+                    Обслуживаем любые автомобили: от надежной отечественной классики до современных иномарок. Быстро, честно, с гарантией.
+                </p>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition duration-300 shadow-lg shadow-orange-500/30 transform hover:-translate-y-1">
+                ОНЛАЙН ЗАПИСЬ
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            
+            <!-- Slider Controls -->
+            <div class="flex gap-2 mt-12" id="slider-dots">
+                <!-- Dots injected by JS -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Экран 2: О салоне -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text -->
+                <div>
+                    <span class="text-orange-500 font-bold tracking-wider uppercase text-sm">О компании</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Force Service: Ваш надежный автопартнер</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Мы не просто чиним автомобили, мы заботимся о вашей безопасности на дороге. Force Service — это команда узкопрофильных специалистов с многолетним опытом. Мы используем современное диагностическое оборудование и даем гарантию на все виды работ. Независимо от марки вашего авто, вы получите премиальный сервис по честной цене.
+                    </p>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-location-dot text-orange-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <p class="font-bold">Адрес:</p>
+                                    <p class="text-gray-400">Новокузнецк, ул. Вокзальная, 22, корп. 3</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-phone text-orange-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <p class="font-bold">Телефон:</p>
+                                    <p class="text-gray-400">+1 123 456 78 90</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-clock text-orange-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <p class="font-bold">Режим работы:</p>
+                                    <p class="text-gray-400">Пн-Вс 10:00 - 21:00</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Map (Iframe) -->
+                <div class="h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=87.147287%2C53.754777&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" class="grayscale contrast-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 3: Наши услуги (Аккордеон) -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-orange-500 font-bold tracking-wider uppercase text-sm">Прайс-лист</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Цены на популярные услуги</h2>
+                <p class="text-gray-400 text-lg">Прозрачное ценообразование без скрытых платежей.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-oil-can text-orange-500"></i> Техническое обслуживание</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Замена масла и масляного фильтра</span><span class="font-bold text-white">500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Проверка уровней жидкостей</span><span class="font-bold text-white">от 20 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена тормозных колодок</span><span class="font-bold text-white">от 500 до 1250 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена фильтров</span><span class="font-bold text-white">от 500 руб.</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Item 2 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-gas-pump text-orange-500"></i> Установка и ремонт ГБО</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Монтаж газобаллонного оборудования</span><span class="font-bold text-orange-400">По запросу</span></li>
+                            <li class="py-3 flex justify-between"><span>Компьютерная диагностика ГБО</span><span class="font-bold text-orange-400">По запросу</span></li>
+                            <li class="py-3 flex justify-between"><span>Плановое ТО газовой системы</span><span class="font-bold text-orange-400">По запросу</span></li>
+                            <li class="py-3 flex justify-between"><span>Ремонт редукторов и замена форсунок</span><span class="font-bold text-orange-400">По запросу</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Item 3 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-toolbox text-orange-500"></i> Слесарный цех</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Замена привода стеклоподъемника</span><span class="font-bold text-white">от 600 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена радиатора печки</span><span class="font-bold text-white">от 660 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Снятие/установка торпеды</span><span class="font-bold text-white">от 1000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Установка защиты картера</span><span class="font-bold text-white">200 руб.</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Item 4 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-car-side text-orange-500"></i> Шиномонтажный цех</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Комплексные работы (4 колеса)</span><span class="font-bold text-white">от 560 до 1840 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Шиномонтаж отдельных колес</span><span class="font-bold text-white">от 40 до 50 руб.</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Item 5 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-laptop-medical text-orange-500"></i> Диагностика автомобиля</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Компьютерная диагностика</span><span class="font-bold text-white">1000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Ремонт электроники, ЭБУ, блоков ABS</span><span class="font-bold text-orange-400">По результатам</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Item 6 -->
+                <details class="group bg-gray-800 rounded-xl border border-gray-700 open:border-orange-500 transition-colors duration-300">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-xl">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-cogs text-orange-500"></i> Ремонт двигателя</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
+                        <ul class="divide-y divide-gray-700">
+                            <li class="py-3 flex justify-between"><span>Полная переборка</span><span class="font-bold text-white">от 9500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена прокладок</span><span class="font-bold text-white">от 1200 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена цепи/ремня ГРМ</span><span class="font-bold text-white">1800 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Ремонт ГБЦ</span><span class="font-bold text-white">5000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Регулировка клапанов</span><span class="font-bold text-white">800 руб.</span></li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 4: Комфортное ожидание -->
+    <section id="waiting" class="py-16 bg-orange-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ожидайте с комфортом</h2>
+            <p class="text-orange-100 text-lg mb-12 max-w-2xl mx-auto">Ваш автомобиль в надежных руках, а вы можете расслабиться в нашей зоне отдыха.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-wifi text-3xl"></i>
+                    </div>
+                    <span class="font-medium">Бесплатный Wi-Fi</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-mug-hot text-3xl"></i>
+                    </div>
+                    <span class="font-medium">Горячий кофе</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-tv text-3xl"></i>
+                    </div>
+                    <span class="font-medium">Телевидение</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-couch text-3xl"></i>
+                    </div>
+                    <span class="font-medium">Уютные диваны</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 5: Акции -->
+    <section id="promotions" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Специальные предложения</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Promo 1 -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 text-orange-500/10 text-9xl transition-transform group-hover:scale-110">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10 flex items-center gap-3">
+                        <span class="text-orange-500 text-3xl">🌸</span> Весенний шиномонтаж
+                    </h3>
+                    <p class="text-gray-400 text-lg relative z-10">Получите скидку 10% на полную переобувку вашего авто.</p>
+                </div>
+                <!-- Promo 2 -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 text-orange-500/10 text-9xl transition-transform group-hover:scale-110">
+                        <i class="fa-solid fa-oil-can"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10 flex items-center gap-3">
+                        <span class="text-orange-500 text-3xl">🛢️</span> Масло в подарок
+                    </h3>
+                    <p class="text-gray-400 text-lg relative z-10">Бесплатная работа по замене масла при чеке на услуги от 3000 рублей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 6: Отзывы клиентов -->
+    <section id="reviews" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-orange-500 font-bold tracking-wider uppercase text-sm">Доверие</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Что говорят наши клиенты</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-700">
+                    <div class="flex text-orange-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Отличный сервис. Сделали компьютерную диагностику и быстро нашли причину стука. Цены адекватные."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold text-xl">А</div>
+                        <div>
+                            <p class="font-bold">Алексей</p>
+                            <p class="text-xs text-gray-500">Toyota Camry</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-700">
+                    <div class="flex text-orange-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Ставил здесь ГБО полгода назад. Всё работает как часы, расход радует. Ребята реально профессионалы."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold text-xl">М</div>
+                        <div>
+                            <p class="font-bold">Михаил</p>
+                            <p class="text-xs text-gray-500">ВАЗ 2114</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-700">
+                    <div class="flex text-orange-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Приехала на замену масла по акции. Пока ждала, поработала в зоне отдыха с Wi-Fi. Очень вежливый персонал."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold text-xl">Е</div>
+                        <div>
+                            <p class="font-bold">Елена</p>
+                            <p class="text-xs text-gray-500">Kia Rio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 7: Лид-форма (Запись на сервис) -->
+    <section id="contact" class="py-24 bg-gray-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-700 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Записаться в автосервис</h2>
+                <p class="text-gray-400 mb-8">Оставьте заявку, и наш мастер свяжется с вами в течение 10 минут.</p>
+                
+                <form id="lead-form" class="space-y-6 text-left max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Имя -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Ваше имя</label>
+                            <input type="text" id="name" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition" placeholder="Иван">
+                        </div>
+                        <!-- Телефон -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Ваш телефон <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition" placeholder="+7 (999) 000-00-00">
+                            <p id="phone-error" class="text-red-500 text-xs mt-1 hidden">Введите корректный номер телефона</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Ваш email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition" placeholder="mail@example.com">
+                        <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Введите корректный email</p>
+                    </div>
+
+                    <!-- Выбор авто / ГБО -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Марка автомобиля</label>
+                        <select id="car-model" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition appearance-none">
+                            <option value="" disabled selected>Выберите марку или услугу</option>
+                            <option value="ВАЗ">ВАЗ (Lada)</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Другая иномарка">Другая иномарка</option>
+                            <option value="Консультация по ГБО" class="font-bold text-orange-500">Консультация по ГБО</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" id="submit-btn" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg py-4 rounded-lg transition duration-300 flex justify-center items-center gap-2 mt-4">
+                        <span>ОНЛАЙН ЗАПИСЬ</span>
+                        <i id="submit-spinner" class="fa-solid fa-circle-notch fa-spin hidden"></i>
+                    </button>
+
+                    <!-- Success Message -->
+                    <div id="success-msg" class="hidden bg-green-500/10 border border-green-500 text-green-500 p-4 rounded-lg text-center mt-4">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Ваша заявка успешно отправлена! Мастер скоро свяжется с вами.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 8: Подвал (Footer) -->
+    <footer class="bg-gray-950 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Branding -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-wrench text-orange-500 text-2xl"></i>
+                        <span class="font-black text-2xl tracking-tighter text-white">FORCE<span class="text-orange-500">SERVICE</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Профессиональный ремонт автомобилей и обслуживание ГБО в Новокузнецке с гарантией качества.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Навигация</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-orange-500 transition">О салоне</a></li>
+                        <li><a href="#services" class="hover:text-orange-500 transition">Услуги и цены</a></li>
+                        <li><a href="#promotions" class="hover:text-orange-500 transition">Акции</a></li>
+                        <li><a href="#reviews" class="hover:text-orange-500 transition">Отзывы</a></li>
+                    </ul>
+                </div>
+                <!-- Contacts -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Контакты</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fa-solid fa-phone mr-2 text-orange-500"></i> +1 123 456 78 90</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-orange-500"></i> hello@company.com</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-orange-500"></i> г. Новокузнецк, ул. Вокзальная, 22, корп. 3</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2024 Force Service. Все права защищены.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+        // 1. Мобильное меню
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 2. Слайдер
+        const slidesData = [
+            { 
+                bg: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80', 
+                title: 'Ремонт авто и ГБО в Новокузнецке', 
+                desc: 'Обслуживаем любые автомобили: от надежной отечественной классики до современных иномарок. Быстро, честно, с гарантией.' 
+            },
+            { 
+                bg: 'https://images.unsplash.com/photo-1635784063875-92c2de1e5443?auto=format&fit=crop&q=80', 
+                title: 'Профессиональная установка и ремонт ГБО', 
+                desc: 'Экономьте на топливе безопасно. Полный комплекс услуг по газобаллонному оборудованию.' 
+            },
+            { 
+                bg: 'https://images.unsplash.com/photo-1503328427499-d92d1fa3afc1?auto=format&fit=crop&q=80', 
+                title: 'Полный спектр ремонтных работ', 
+                desc: 'От планового ТО до сложного ремонта двигателя. Современное оборудование и опытные мастера.' 
+            }
+        ];
+
+        let currentSlide = 0;
+        const container = document.getElementById('slider-container');
+        const titleEl = document.getElementById('slide-title');
+        const descEl = document.getElementById('slide-desc');
+        const dotsContainer = document.getElementById('slider-dots');
+
+        // Инициализация слайдов (фоны)
+        slidesData.forEach((slide, index) => {
+            const div = document.createElement('div');
+            div.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+            div.style.backgroundImage = `url('${slide.bg}')`;
+            div.id = `bg-slide-${index}`;
+            container.appendChild(div);
+
+            // Создание точек
+            const dot = document.createElement('button');
+            dot.className = `w-3 h-3 rounded-full transition-colors ${index === 0 ? 'bg-orange-500' : 'bg-gray-500 hover:bg-gray-400'}`;
+            dot.onclick = () => goToSlide(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            // Анимация текста
+            titleEl.classList.remove('opacity-100');
+            titleEl.classList.add('opacity-0');
+            descEl.classList.remove('opacity-100');
+            descEl.classList.add('opacity-0');
+
+            setTimeout(() => {
+                // Смена фонов
+                document.getElementById(`bg-slide-${currentSlide}`).classList.remove('opacity-100');
+                document.getElementById(`bg-slide-${currentSlide}`).classList.add('opacity-0');
+                
+                currentSlide = index;
+                
+                document.getElementById(`bg-slide-${currentSlide}`).classList.remove('opacity-0');
+                document.getElementById(`bg-slide-${currentSlide}`).classList.add('opacity-100');
+
+                // Смена текста
+                titleEl.textContent = slidesData[currentSlide].title;
+                descEl.textContent = slidesData[currentSlide].desc;
+                
+                titleEl.classList.remove('opacity-0');
+                titleEl.classList.add('opacity-100');
+                descEl.classList.remove('opacity-0');
+                descEl.classList.add('opacity-100');
+
+                // Обновление точек
+                Array.from(dotsContainer.children).forEach((dot, i) => {
+                    dot.className = `w-3 h-3 rounded-full transition-colors ${i === currentSlide ? 'bg-orange-500' : 'bg-gray-500 hover:bg-gray-400'}`;
+                });
+            }, 300); // Половина времени транзиции
+        }
+
+        // Автоплей слайдера
+        setInterval(() => {
+            let next = (currentSlide + 1) % slidesData.length;
+            goToSlide(next);
+        }, 5000);
+
+        // 3. Обработка формы
+        const form = document.getElementById('lead-form');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const phoneError = document.getElementById('phone-error');
+        const emailError = document.getElementById('email-error');
+        const submitBtn = document.getElementById('submit-btn');
+        const spinner = document.getElementById('submit-spinner');
+        const successMsg = document.getElementById('success-msg');
+
+        // Простая валидация телефона (только цифры, +, -, скобки, пробелы)
+        const phoneRegex = /^[\d\+\-\(\)\s]+$/;
+        // Простая валидация email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            if (!phoneRegex.test(phoneInput.value.trim())) {
+                phoneError.classList.remove('hidden');
+                phoneInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                phoneError.classList.add('hidden');
+                phoneInput.classList.remove('border-red-500');
+            }
+
+            if (!emailRegex.test(emailInput.value.trim())) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-red-500');
+            }
+
+            if (!isValid) return;
+
+            // Имитация отправки (например, в Telegram Bot или API)
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            spinner.classList.remove('hidden');
+
+            setTimeout(() => {
+                // Успешная отправка
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                spinner.classList.add('hidden');
+                
+                successMsg.classList.remove('hidden');
+                form.reset();
+
+                // Скрыть сообщение через 5 секунд
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        });
+
+        // Плавный скролл для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Закрываем мобильное меню при клике
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
