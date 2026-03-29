@@ -62,9 +62,11 @@
                     <a href="#services" class="text-gray-300 hover:text-orange-500 transition font-medium">Услуги и цены</a>
                     <a href="#promotions" class="text-gray-300 hover:text-orange-500 transition font-medium">Акции</a>
                     <a href="#reviews" class="text-gray-300 hover:text-orange-500 transition font-medium">Отзывы</a>
-                    <div class="flex flex-col items-end ml-4">
-                        <a href="tel:+11234567890" class="text-white font-bold text-lg hover:text-orange-500 transition">+1 123 456 78 90</a>
-                        <span class="text-xs text-gray-400">Пн-Вс 10:00 - 21:00</span>
+                    <div class="ml-4">
+                        <a href="tel:+79609281111" class="group flex items-center gap-2 bg-gray-800 hover:bg-orange-500 border border-gray-700 hover:border-orange-500 text-white px-5 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-orange-500/30">
+                            <i class="fa-solid fa-phone text-orange-500 group-hover:text-white transition-colors"></i>
+                            <span class="font-bold tracking-wide">+7 (960) 928-11-11</span>
+                        </a>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
@@ -142,14 +144,14 @@
                                 <i class="fa-solid fa-phone text-orange-500 mt-1 mr-4 text-xl"></i>
                                 <div>
                                     <p class="font-bold">Телефон:</p>
-                                    <p class="text-gray-400">+1 123 456 78 90</p>
+                                    <p class="text-gray-400">+7 (960) 928-11-11</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <i class="fa-solid fa-clock text-orange-500 mt-1 mr-4 text-xl"></i>
                                 <div>
                                     <p class="font-bold">Режим работы:</p>
-                                    <p class="text-gray-400">Пн-Вс 10:00 - 21:00</p>
+                                    <p class="text-gray-400">Пн-Пт: 9.00-19.00, Сб: 9.00-18.00<br>Вск: выходной</p>
                                 </div>
                             </li>
                         </ul>
@@ -158,6 +160,33 @@
                 <!-- Map (Iframe) -->
                 <div class="h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                     <iframe src="https://yandex.ru/map-widget/v1/?ll=87.147287%2C53.754777&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" class="grayscale contrast-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"></iframe>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-700 pt-16 mt-16">
+                <!-- Запчасти -->
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 flex flex-col justify-center shadow-lg">
+                    <div class="w-14 h-14 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                        <i class="fa-solid fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Свой склад запчастей</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <span>Подберём запчасти на любой автомобиль.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <span>Привезём качественные детали по доступным ценам.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-shield-halved text-orange-500 mt-1"></i> <span class="font-medium text-white">Дадим гарантию на запчасти и работы 6 месяцев или 18 т.км.</span></li>
+                    </ul>
+                </div>
+                <!-- B2B -->
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 flex flex-col justify-center shadow-lg">
+                    <div class="w-14 h-14 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 text-orange-500 text-3xl">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Для юридических лиц</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <span>Работаем с организациями по договору.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <span>Регулярное ТО и приоритетный ремонт вашего автопарка.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-file-signature text-orange-500 mt-1"></i> <span class="font-medium text-white">Предоставляем все закрывающие документы.</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -181,10 +210,10 @@
                     </summary>
                     <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
                         <ul class="divide-y divide-gray-700">
-                            <li class="py-3 flex justify-between"><span>Замена масла и масляного фильтра</span><span class="font-bold text-white">500 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Проверка уровней жидкостей</span><span class="font-bold text-white">от 20 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Замена тормозных колодок</span><span class="font-bold text-white">от 500 до 1250 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Замена фильтров</span><span class="font-bold text-white">от 500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена масла и масляного фильтра</span><span class="font-bold text-white">700 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Проверка уровней жидкостей</span><span class="font-bold text-green-400">Бесплатно</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена тормозных колодок</span><span class="font-bold text-white">1500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена фильтров</span><span class="font-bold text-white">от 300 руб.</span></li>
                         </ul>
                     </div>
                 </details>
@@ -197,10 +226,11 @@
                     </summary>
                     <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
                         <ul class="divide-y divide-gray-700">
-                            <li class="py-3 flex justify-between"><span>Монтаж газобаллонного оборудования</span><span class="font-bold text-orange-400">По запросу</span></li>
-                            <li class="py-3 flex justify-between"><span>Компьютерная диагностика ГБО</span><span class="font-bold text-orange-400">По запросу</span></li>
-                            <li class="py-3 flex justify-between"><span>Плановое ТО газовой системы</span><span class="font-bold text-orange-400">По запросу</span></li>
-                            <li class="py-3 flex justify-between"><span>Ремонт редукторов и замена форсунок</span><span class="font-bold text-orange-400">По запросу</span></li>
+                            <li class="py-3 flex justify-between"><span>Монтаж газобаллонного оборудования</span><span class="font-bold text-orange-400">от 42 000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Компьютерная диагностика ГБО</span><span class="font-bold text-orange-400">1500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Плановое ТО газовой системы</span><span class="font-bold text-orange-400">от 1200 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Ремонт редукторов и замена форсунок</span><span class="font-bold text-orange-400">от 3000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Регистрация ГБО в ГИБДД</span><span class="font-bold text-orange-400">10 000 руб.</span></li>
                         </ul>
                     </div>
                 </details>
@@ -213,10 +243,11 @@
                     </summary>
                     <div class="text-gray-300 p-6 pt-0 border-t border-gray-700 mt-2">
                         <ul class="divide-y divide-gray-700">
-                            <li class="py-3 flex justify-between"><span>Замена привода стеклоподъемника</span><span class="font-bold text-white">от 600 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Замена радиатора печки</span><span class="font-bold text-white">от 660 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Снятие/установка торпеды</span><span class="font-bold text-white">от 1000 руб.</span></li>
-                            <li class="py-3 flex justify-between"><span>Установка защиты картера</span><span class="font-bold text-white">200 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Развал-схождение</span><span class="font-bold text-white">от 2000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Осмотр ходовой части</span><span class="font-bold text-green-400">Бесплатно</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена рулевой тяги с наконечником</span><span class="font-bold text-white">от 2000 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена ступичного подшипника</span><span class="font-bold text-white">от 2500 руб.</span></li>
+                            <li class="py-3 flex justify-between"><span>Замена амортизатора</span><span class="font-bold text-white">от 2000 руб.</span></li>
                         </ul>
                     </div>
                 </details>
@@ -474,8 +505,9 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Контакты</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><i class="fa-solid fa-phone mr-2 text-orange-500"></i> +1 123 456 78 90</li>
-                        <li><i class="fa-solid fa-envelope mr-2 text-orange-500"></i> hello@company.com</li>
+                        <li><i class="fa-solid fa-phone mr-2 text-orange-500"></i> +7 (960) 928-11-11</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-orange-500"></i> Force_service@bk.ru</li>
+                        <li><i class="fa-solid fa-clock mr-2 text-orange-500"></i> Пн-Пт: 9.00-19.00, Сб: 9.00-18.00, Вск: выходной</li>
                         <li><i class="fa-solid fa-location-dot mr-2 text-orange-500"></i> г. Новокузнецк, ул. Вокзальная, 22, корп. 3</li>
                     </ul>
                 </div>
@@ -503,17 +535,17 @@
         // 2. Слайдер
         const slidesData = [
             { 
-                bg: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80', 
+                bg: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80', 
                 title: 'Ремонт авто и ГБО в Новокузнецке', 
                 desc: 'Обслуживаем любые автомобили: от надежной отечественной классики до современных иномарок. Быстро, честно, с гарантией.' 
             },
             { 
-                bg: 'https://images.unsplash.com/photo-1635784063875-92c2de1e5443?auto=format&fit=crop&q=80', 
+                bg: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80', 
                 title: 'Профессиональная установка и ремонт ГБО', 
                 desc: 'Экономьте на топливе безопасно. Полный комплекс услуг по газобаллонному оборудованию.' 
             },
             { 
-                bg: 'https://images.unsplash.com/photo-1503328427499-d92d1fa3afc1?auto=format&fit=crop&q=80', 
+                bg: 'https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1920&q=80', 
                 title: 'Полный спектр ремонтных работ', 
                 desc: 'От планового ТО до сложного ремонта двигателя. Современное оборудование и опытные мастера.' 
             }
